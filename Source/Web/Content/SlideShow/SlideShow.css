@@ -1,0 +1,61 @@
+﻿/*---------------------------------------------------------------------------------
+SlideShow Classes
+---------------------------------------------------------------------------------*/
+
+.SlideShowMainContainer
+{
+	margin: 10px 0 10px 10px;
+}
+
+.SlideShowControlsContainer
+{
+	margin: 0 0 10px 0;
+	padding: 0 0 10px 0;
+	border-bottom: solid 2px #056936;
+}
+
+.Next, .Previous, .NextDisabled, .PreviousDisabled
+{
+	float: left;
+	text-decoration: none;
+	display: block;
+	height: 24px;
+	width: 24px;
+	margin: 0 10px 0 0;
+}
+
+.Next
+{
+	background: url("/Content/SlideShow/NextButton.gif") no-repeat;
+}
+
+.Previous
+{
+	background: url("/Content/SlideShow/PreviousButton.gif") no-repeat;
+}
+
+.NextDisabled
+{
+	background: url("/Content/SlideShow/NextButtonDisabled.gif") no-repeat;
+}
+
+.PreviousDisabled
+{
+	background: url("/Content/SlideShow/PreviousButtonDisabled.gif") no-repeat;
+}
+
+.Next span, .Previous span, .NextDisabled span, .PreviousDisabled span
+{
+	display: none;
+}
+
+.SlideShowImageTitle
+{
+	font-size: 14pt;
+}
+
+.SlideShowDescriptionContainer
+{
+	clear: both;
+	margin: 0 0 10px 0;
+}

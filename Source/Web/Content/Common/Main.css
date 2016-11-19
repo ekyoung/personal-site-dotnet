@@ -1,0 +1,56 @@
+﻿body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+
+.ey-leftNav {
+    /* Copied from the Flatly dropdown-menu */
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip: padding-box;
+
+    /* Copied from bs-sidenav on the bootstrap site so that the square corners on the higlighted items don't mess with the rounded corners of the ul*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.ey-leftNav > li > a {
+    /* Copied from the Flatly dropdown-menu */
+    color: #7b8a8b;
+}
+
+.ey-leftNav > li > a:hover,
+.ey-leftNav > li > a:focus {
+    /* Copied from the Flatly dropdown-menu */
+    color: #ffffff;
+    background-color: #2c3e50;
+}
+
+/*-------------------------------------------------------------------------------------------
+Image Galleries
+-------------------------------------------------------------------------------------------*/
+
+.thumbnailContainer
+{
+	float: left;
+	width: 162px;
+	height: 162px;
+	margin: 4px;
+	border: solid 1px black;
+}
+
+.thumbnailContainer table
+{
+	height: 100%;
+	width: 100%;
+}
+
+.thumbnailContainer table td
+{
+	vertical-align: middle;
+	text-align: center;
+}

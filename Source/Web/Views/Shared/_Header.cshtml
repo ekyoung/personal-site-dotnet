@@ -1,0 +1,52 @@
+﻿@using EthanYoung.PersonalWebsite.Web.Models
+@model HeaderModel
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">Ethan Young</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li @if (@Model.IsHomeActive)
+                    {
+                        @: class="active"
+                    }
+                ><a href="@Url.Action("Index", "Home")">Home</a></li>
+                <li class="dropdown @if (@Model.IsTripsActive)
+                                    {
+                                        @: active
+                                    }">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trips <b class="caret"></b></a>                
+                    <ul class="dropdown-menu">
+                        <li><a href="@Url.Action("Index", "Trips")">All Trips</a></li>
+                        <li class="divider"></li>
+                        <li><a href="@Url.Action("Gallery", "Trips", new { trip = "Alaska2005" })">Alaska Motorcycle Trip 2005</a></li>
+                        <li><a href="@Url.Action("Gallery", "Trips", new { trip = "Southwest2007" })">Southwest Motorcycle Trip 2007</a></li>
+                        <li><a href="@Url.Action("Gallery", "Trips", new { trip = "Mexico2013" })">Playa del Carmen, Mexico 2013</a></li>
+                        <li><a href="@Url.Action("Gallery", "Trips", new { trip = "MoabMay2006" })">Moab May 2006</a></li>
+                        <li><a href="@Url.Action("Gallery", "Trips", new { trip = "UncleBudHut2007" })">Uncle Bud Hut Ski Trip</a></li>
+                        <li><a href="@Url.Action("Gallery", "Trips", new { trip = "BettyBearHut2006" })">Betty Bear Hut Ski Trip</a></li>
+                        <li><a href="@Url.Action("Gallery", "Trips", new { trip = "BinghamCanyonMine" })">Bingham Canyon Mine</a></li>
+                        <li><a href="@Url.Action("Gallery", "Trips", new { trip = "DinosaurNM2005" })">Dinosaur National Monument</a></li>
+                    </ul>
+                </li>
+                <li @if (@Model.IsAboutThisSiteActive)
+                    {
+                        @: class="active"
+                    }
+                ><a href="@Url.Action("Index", "AboutThisSite")">About This Site</a></li>
+                <li @if (@Model.IsResumeActive)
+                    {
+                        @: class="active"
+                    }
+                ><a href="@Url.Action("Index", "Resume")">Resume</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
