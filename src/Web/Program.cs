@@ -27,5 +27,10 @@ namespace Web
 
             host.Run();
         }
+
+        public static bool GetTrue()
+        {
+            return true;
+        }
     }
 }
