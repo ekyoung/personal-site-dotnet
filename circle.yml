@@ -21,7 +21,7 @@ deployment:
   production:
     branch: develop
     codedeploy:
-      word-splitter:
+      personal-site-netcore:
         application_root: /code-deploy
         revision_location:
           revision_type: S3
