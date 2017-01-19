@@ -61,8 +61,22 @@ namespace Web
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Root}/{action=Index}/{id?}");
+                    name: "trip-index",
+                    template: "trips",
+                    defaults: new {controller = "Trips", action = "Index"}
+                );
+
+                routes.MapRoute(
+                    name: "single-trip",
+                    template: "trips/{id}/{action}",
+                    defaults: new {controller = "Trips", action = "Gallery"}
+                );
+
+                routes.MapRoute(
+                    name: "root",
+                    template: "{action}",
+                    defaults: new { controller = "Root", action = "Index"}
+                );
             });
         }
     }

@@ -1,0 +1,10 @@
+@using EthanYoung.PersonalWebsite.Web.Models
+@{
+    ViewBag.Title = "Trips";
+}
+@section header {
+    @Html.Partial("_Header", new HeaderModel {IsTripsActive = true})
+}
+<p>
+    Show the @ViewBag.TripId slide show here.
+</p>

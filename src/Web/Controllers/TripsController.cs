@@ -6,20 +6,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
-    public class RootController : Controller
+    public class TripsController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Resume()
+        public IActionResult Gallery(string id)
         {
+            ViewBag.TripId = id;
+
             return View();
         }
 
-        public IActionResult Error()
+        public IActionResult SlideShow(string id)
         {
+            ViewBag.TripId = id;
+            
             return View();
         }
     }
