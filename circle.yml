@@ -19,7 +19,7 @@ test:
 
 deployment:
   production:
-    branch: develop
+    branch: master
     codedeploy:
       personal-site-netcore:
         application_root: /code-deploy
