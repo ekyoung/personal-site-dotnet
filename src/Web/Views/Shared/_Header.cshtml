@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="@Url.Action("Index", "Root")">Ethan Young</a>
+            <a class="navbar-brand" href="@Url.Action("index", "root")">Ethan Young</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -17,35 +17,35 @@
                     {
                         @: class="active"
                     }
-                ><a href="@Url.Action("Index", "Root")">Home</a></li>
+                ><a href="@Url.Action("index", "root")">Home</a></li>
                 <li class="dropdown @if (@Model.IsTripsActive)
                                     {
                                         @: active
                                     }">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trips <b class="caret"></b></a>                
                     <ul class="dropdown-menu">
-                        <li><a href="@Url.Action("Index", "Trips")">All Trips</a></li>
+                        <li><a href="@Url.Action("index", "trips")">All Trips</a></li>
                         <li class="divider"></li>
-                        <li><a href="@Url.Action("Gallery", "Trips", new { id = "alaska-2005" })">Alaska Motorcycle Trip 2005</a></li>
-                        <li><a href="@Url.Action("Gallery", "Trips", new { id = "southwest-2007" })">Southwest Motorcycle Trip 2007</a></li>
-                        <li><a href="@Url.Action("Gallery", "Trips", new { id = "mexico-2013" })">Playa del Carmen, Mexico 2013</a></li>
-                        <li><a href="@Url.Action("Gallery", "Trips", new { id = "moab-may-2006" })">Moab May 2006</a></li>
-                        <li><a href="@Url.Action("Gallery", "Trips", new { id = "uncle-bud-hut-2007" })">Uncle Bud Hut Ski Trip</a></li>
-                        <li><a href="@Url.Action("Gallery", "Trips", new { id = "betty-bear-hut-2006" })">Betty Bear Hut Ski Trip</a></li>
-                        <li><a href="@Url.Action("Gallery", "Trips", new { id = "bingham-canyon-mine" })">Bingham Canyon Mine</a></li>
-                        <li><a href="@Url.Action("Gallery", "Trips", new { id = "dinosaur-nm-2005" })">Dinosaur National Monument</a></li>
+                        <li><a href="@Url.Action("gallery", "trips", new { id = "alaska-2005" })">Alaska Motorcycle Trip 2005</a></li>
+                        <li><a href="@Url.Action("gallery", "trips", new { id = "southwest-2007" })">Southwest Motorcycle Trip 2007</a></li>
+                        <li><a href="@Url.Action("gallery", "trips", new { id = "mexico-2013" })">Playa del Carmen, Mexico 2013</a></li>
+                        <li><a href="@Url.Action("gallery", "trips", new { id = "moab-may-2006" })">Moab May 2006</a></li>
+                        <li><a href="@Url.Action("gallery", "trips", new { id = "uncle-bud-hut-2007" })">Uncle Bud Hut Ski Trip</a></li>
+                        <li><a href="@Url.Action("gallery", "trips", new { id = "betty-bear-hut-2006" })">Betty Bear Hut Ski Trip</a></li>
+                        <li><a href="@Url.Action("gallery", "trips", new { id = "bingham-canyon-mine" })">Bingham Canyon Mine</a></li>
+                        <li><a href="@Url.Action("gallery", "trips", new { id = "dinosaur-nm-2005" })">Dinosaur National Monument</a></li>
                     </ul>
                 </li>
                 <li @if (@Model.IsAboutThisSiteActive)
                     {
                         @: class="active"
                     }
-                ><a href="@Url.Action("AboutThisSite", "Root")">About This Site</a></li>
+                ><a href="@Url.Action("about-this-site", "root")">About This Site</a></li>
                 <li @if (@Model.IsResumeActive)
                     {
                         @: class="active"
                     }
-                ><a href="@Url.Action("Resume", "Root")">Resume</a></li>
+                ><a href="@Url.Action("resume", "root")">Resume</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

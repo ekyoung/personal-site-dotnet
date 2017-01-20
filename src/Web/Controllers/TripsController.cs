@@ -20,6 +20,7 @@ namespace Web.Controllers
             return View();
         }
 
+        [ActionName("slide-show")]
         public IActionResult SlideShow(string id)
         {
             ViewBag.TripId = id;
