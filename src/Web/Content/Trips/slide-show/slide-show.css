@@ -26,22 +26,22 @@ SlideShow Classes
 
 .Next
 {
-	background: url("/Content/SlideShow/NextButton.gif") no-repeat;
+	background: url("/content/trips/slide-show/next-button.gif") no-repeat;
 }
 
 .Previous
 {
-	background: url("/Content/SlideShow/PreviousButton.gif") no-repeat;
+	background: url("/content/trips/slide-show/previous-button.gif") no-repeat;
 }
 
 .NextDisabled
 {
-	background: url("/Content/SlideShow/NextButtonDisabled.gif") no-repeat;
+	background: url("/content/trips/slide-show/next-button-disabled.gif") no-repeat;
 }
 
 .PreviousDisabled
 {
-	background: url("/Content/SlideShow/PreviousButtonDisabled.gif") no-repeat;
+	background: url("/content/trips/slide-show/previous-button-disabled.gif") no-repeat;
 }
 
 .Next span, .Previous span, .NextDisabled span, .PreviousDisabled span

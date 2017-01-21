@@ -7,11 +7,11 @@ slideShowApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
             when('/slides/:slideId', {
-                templateUrl: '/Content/SlideShow/SlideTemplate.html',
+                templateUrl: '/content/trips/slide-show/slide-template.html',
                 controller: 'slideController'
             }).
             otherwise({
-                templateUrl: '/Content/SlideShow/LoadingTemplate.html',
+                templateUrl: '/content/trips/slide-show/loading-template.html',
                 controller: 'loadingController'
             });
     }]);

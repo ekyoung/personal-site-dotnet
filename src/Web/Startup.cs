@@ -51,8 +51,8 @@ namespace Web
             app.UseStaticFiles(new StaticFileOptions()
             {
                 FileProvider = new PhysicalFileProvider(
-                    Path.Combine(Directory.GetCurrentDirectory(), @"Content")),
-                RequestPath = new PathString("/Content")
+                    Path.Combine(Directory.GetCurrentDirectory(), "Content")),
+                RequestPath = new PathString("/content")
             });
 
             app.UseMvc(routes =>

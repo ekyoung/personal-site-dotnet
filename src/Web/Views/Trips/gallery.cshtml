@@ -1,10 +1,48 @@
 @using EthanYoung.PersonalWebsite.Web.Models
+@model Trip
 @{
     ViewBag.Title = "Trips";
+}
+@section head {
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.min.js"></script>
+    <script src="/content/trips/xml2json.js"></script>
+    <script src="/content/trips/image-gallery/gallery-controllers.js"></script>
 }
 @section header {
     @Html.Partial("_header", new HeaderModel {IsTripsActive = true})
 }
-<p>
-    Show the @ViewBag.TripId photo gallery here.
-</p>
+<div class="row">
+    <div class="visible-md visible-lg col-md-2">
+        @Html.Partial("_left-nav", new LeftNavModel {SelectedMenuItemId = "Trips"})
+    </div>
+    <div class="col-sm-12 col-md-10" role="main">
+        <script type="text/javascript">
+            angular.module('galleryApp')
+                .value('indexFileUrl', '@Model.IndexFileUrl')
+                .value('rootUrl', '@Model.RootUrl');
+        </script>
+        <div ng-app="galleryApp" ng-controller="galleryController">
+            <div ng-show="showLoading">
+                <h1>Loading</h1>
+                <p>
+                    This will just take a second...
+                </p>
+            </div>
+            <div ng-hide="showLoading">
+                <h1>@Model.Title</h1>
+                <div ng-repeat="slide in slides" class="thumbnailContainer">
+                    <table cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td>
+                                <a ng-href="{{rootUrl}}/WebSize/{{slide.FileName}}">
+                                    <img title="{{slide.Title}} {{slide.DateTaken | date:'medium'}}" ng-src="{{rootUrl}}/Thumbnails/{{slide.FileName}}" alt="{{slide.Title}} {{slide.DateTaken | date:'medium'}}" style="border-width:0;" />
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
