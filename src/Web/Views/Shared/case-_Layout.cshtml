@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+@if (@ViewBag.AngularJsApp != null)
+{
+    @: <html lang="en" ng-app="@ViewBag.AngularJsApp">
+}
+else
+{
+    @: <html lang="en">
+}
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - EthanYoung.us</title>
+    <link rel="stylesheet" href="/css/site.min.css"/>
+    @RenderSection("head", required: false)
+</head>
+<body>
+    @RenderSection("header", required: true)
+    <div class="container">
+        @RenderBody()
+    </div>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/Content/bootstrap-3.0.2/js/bootstrap.min.js"></script>
+</body>
+</html>
