@@ -7,6 +7,7 @@ namespace Web.Controllers
 {
     public class TripsController : Controller
     {
+        [ActionName("index")]
         public IActionResult Index()
         {
             return View();
@@ -29,6 +30,7 @@ namespace Web.Controllers
             return trips.First(x => x.Id.ToLower() == trip.ToLower());
         }
 
+        [ActionName("gallery")]
         public IActionResult Gallery(string id)
         {
             return View(GetTrip(id));
