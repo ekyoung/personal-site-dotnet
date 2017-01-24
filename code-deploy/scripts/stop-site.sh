@@ -1,3 +1,3 @@
-if ( status personal-site-netcore | grep start ); then
-  stop personal-site-netcore
+if ( status personal-site-dotnet | grep start ); then
+  stop personal-site-dotnet
 fi

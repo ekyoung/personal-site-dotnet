@@ -1,1 +1,1 @@
-start personal-site-netcore
+start personal-site-dotnet

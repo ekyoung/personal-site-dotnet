@@ -2,10 +2,10 @@
 version: 0.0
 os: linux
 files:
-  - source: ./personal-site-netcore.conf
+  - source: ./personal-site-dotnet.conf
     destination: /etc/init/
   - source: ./content
-    destination: /srv/personal-site-netcore
+    destination: /srv/personal-site-dotnet
 hooks:
   ApplicationStart:
     - location: ./scripts/start-site.sh

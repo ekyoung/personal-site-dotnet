@@ -1,2 +1,2 @@
-# personal-site-netcore
-My personal website built in ASP.NET MVC for .NET Core in C#
+# personal-site-dotnet
+My personal website built in ASP.NET Core MVC for .NET Core in C#

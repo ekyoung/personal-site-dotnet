@@ -21,13 +21,13 @@ deployment:
   production:
     branch: master
     codedeploy:
-      personal-site-netcore:
+      personal-site-dotnet:
         application_root: /code-deploy
         revision_location:
           revision_type: S3
           s3_location:
             bucket: ethan-young-code-deploy-us-west-2
-            key_pattern: personal-site-netcore/production/{SHORT_COMMIT}-{BUILD_NUM}
+            key_pattern: personal-site-dotnet/production/{SHORT_COMMIT}-{BUILD_NUM}
         region: us-west-2
         deployment_group: production
         deployment_config: CodeDeployDefault.OneAtATime
