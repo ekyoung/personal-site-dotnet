@@ -1,0 +1,14 @@
+﻿<div class="SlideShowMainContainer" ng-cloak>
+    <div class="SlideShowControlsContainer">
+        <a title="Previous" ng-href="{{previousButtonHref}}" class="{{previousButtonClass}}"><span>Previous</span></a>
+        <a title="Next" ng-href="{{nextButtonHref}}" class="{{nextButtonClass}}"><span>Next</span></a>
+        <span class="SlideShowImageTitle">{{slide.Title}}</span>
+    </div>
+    <div class="SlideShowDescriptionContainer">
+        {{slide.Description}}
+    </div>
+    <img class="img-responsive" ng-src="{{slide.WebSizeImageUrl}}" />
+    <div>
+        Date Taken: {{slide.DateTaken | date:'medium'}}
+    </div>
+</div>

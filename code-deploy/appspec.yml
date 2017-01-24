@@ -1,0 +1,15 @@
+# This is an appspec.yml template file for use with AWS CodeDeploy.
+version: 0.0
+os: linux
+files:
+  - source: ./personal-site-netcore.conf
+    destination: /etc/init/
+  - source: ./content
+    destination: /srv/personal-site-netcore
+hooks:
+  ApplicationStart:
+    - location: ./scripts/start-site.sh
+      runas: root
+  ApplicationStop:
+    - location: ./scripts/stop-site.sh
+      runas: root

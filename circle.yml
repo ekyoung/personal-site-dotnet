@@ -1,0 +1,33 @@
+dependencies:
+  pre:
+    - sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
+    - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
+    - sudo apt-get update
+    - sudo apt-get install dotnet-dev-1.0.0-preview2-003131
+    - sudo apt-get install xsltproc
+  override:
+    - dotnet restore
+test:
+  override:
+    - dotnet test ./test/Web.Tests/ --result=Web.Tests.xml
+    - mkdir -p $CIRCLE_TEST_REPORTS/nunit
+    - xsltproc -o $CIRCLE_TEST_REPORTS/nunit/Web.Tests.xml nunit3-junit.xslt ./Web.Tests.xml
+  post:
+   - dotnet publish -c Release -r centos.7-x64 ./src/Web/
+   - mkdir ./code-deploy/content
+   - cp -r ./src/Web/bin/Release/netcoreapp1.0/centos.7-x64/publish/* ./code-deploy/content/
+
+deployment:
+  production:
+    branch: master
+    codedeploy:
+      personal-site-netcore:
+        application_root: /code-deploy
+        revision_location:
+          revision_type: S3
+          s3_location:
+            bucket: ethan-young-code-deploy-us-west-2
+            key_pattern: personal-site-netcore/production/{SHORT_COMMIT}-{BUILD_NUM}
+        region: us-west-2
+        deployment_group: production
+        deployment_config: CodeDeployDefault.OneAtATime
