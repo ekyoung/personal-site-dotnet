@@ -4,6 +4,7 @@ namespace Web.Controllers
 {
     public class RootController : Controller
     {
+        [ActionName("index")]
         public IActionResult Index()
         {
             return View();
@@ -15,11 +16,13 @@ namespace Web.Controllers
             return View();
         }
 
+        [ActionName("resume")]
         public IActionResult Resume()
         {
             return View();
         }
 
+        [ActionName("error")]
         public IActionResult Error()
         {
             return View();
