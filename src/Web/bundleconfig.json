@@ -3,7 +3,7 @@
     "outputFileName": "wwwroot/css/site.min.css",
     "inputFiles": [
       "Content/bootstrap-3.0.2/css/bootstrap.css",
-      "Content/Common/Main.css"
+      "Content/common/main.css"
     ]
   }
 ]
