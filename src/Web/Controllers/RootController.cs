@@ -27,16 +27,5 @@ namespace Web.Controllers
         {
             return View();
         }
-
-        [ActionName("error")]
-        public IActionResult Error(int statusCode)
-        {
-            if(statusCode == 404) 
-            {
-                return View("page-not-found");
-            }
-
-            return View();
-        }
     }
 }

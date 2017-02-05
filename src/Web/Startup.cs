@@ -71,9 +71,9 @@ namespace Web
                 );
 
                 routes.MapRoute(
-                    name: "errors",
+                    name: "error",
                     template: "error/{statusCode}",
-                    defaults: new { controller = "root", action = "error" }
+                    defaults: new { controller = "error", action = "error" }
                 );
 
                 routes.MapRoute(
