@@ -19,7 +19,7 @@ test:
 
 deployment:
   production:
-    branch: master
+    tag: /\d{4}\.\d{2}\.\d{2}\.\d{2}/
     codedeploy:
       personal-site-dotnet:
         application_root: /code-deploy
