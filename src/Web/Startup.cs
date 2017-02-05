@@ -44,7 +44,8 @@ namespace Web
             }
             else
             {
-                app.UseExceptionHandler("/Root/Error");
+                app.UseExceptionHandler("/error/500");
+                app.UseStatusCodePagesWithReExecute("/error/{0}");
             }
 
             app.UseStaticFiles();
@@ -60,19 +61,25 @@ namespace Web
                 routes.MapRoute(
                     name: "trip-index",
                     template: "trips",
-                    defaults: new {controller = "Trips", action = "Index"}
+                    defaults: new { controller = "trips", action = "index" }
                 );
 
                 routes.MapRoute(
                     name: "single-trip",
                     template: "trips/{id}/{action}",
-                    defaults: new {controller = "Trips", action = "Gallery"}
+                    defaults: new { controller = "trips", action = "gallery" }
+                );
+
+                routes.MapRoute(
+                    name: "errors",
+                    template: "error/{statusCode}",
+                    defaults: new { controller = "root", action = "error" }
                 );
 
                 routes.MapRoute(
                     name: "root",
                     template: "{action}",
-                    defaults: new { controller = "Root", action = "Index"}
+                    defaults: new { controller = "root", action = "index" }
                 );
             });
         }

@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
@@ -11,8 +12,13 @@ namespace Web.Controllers
         }
 
         [ActionName("about-this-site")]
-        public IActionResult AboutThisSite()
+        public IActionResult AboutThisSite(bool throwEx)
         {
+            if (throwEx)
+            {
+                throw new Exception("Here's your exception.");
+            }
+
             return View();
         }
 
@@ -23,8 +29,13 @@ namespace Web.Controllers
         }
 
         [ActionName("error")]
-        public IActionResult Error()
+        public IActionResult Error(int statusCode)
         {
+            if(statusCode == 404) 
+            {
+                return View("page-not-found");
+            }
+
             return View();
         }
     }
