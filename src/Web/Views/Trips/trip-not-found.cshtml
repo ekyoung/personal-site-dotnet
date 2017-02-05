@@ -1,0 +1,19 @@
+@using EthanYoung.PersonalWebsite.Web.Models
+@model Trip
+@{
+    ViewBag.Title = "Trip Not Found";
+}
+@section header {
+    @Html.Partial("_header", new HeaderModel {IsTripsActive = true})
+}
+<div class="row">
+    <div class="visible-md visible-lg col-md-2">
+        @Html.Partial("_left-nav", new LeftNavModel {SelectedMenuItemId = "Trips"})
+    </div>
+    <div class="col-sm-12 col-md-10" role="main">
+        <h1>Trip Not Found</h1>
+        <p>
+            Try selecting a trip from the menu.
+        </p>
+    </div>
+</div>

@@ -27,18 +27,30 @@ namespace Web.Controllers
                 new Trip {Id = "uncle-bud-hut-2007", Title = "Uncle Bud Hut Ski Trip", IndexFileUrl = "http://img.ethanyoung.us/UncleBudHut2007/UncleBudHut2007Index.xml", RootUrl = "http://img.ethanyoung.us/UncleBudHut2007"},
             };
 
-            return trips.First(x => x.Id.ToLower() == trip.ToLower());
+            return trips.FirstOrDefault(x => x.Id.ToLower() == trip.ToLower());
         }
 
         [ActionName("gallery")]
         public IActionResult Gallery(string id)
         {
-            return View(GetTrip(id));
+            return TripViewOrNotFound(id);
         }
 
         [ActionName("slide-show")]
         public IActionResult SlideShow(string id)
         {
+            return TripViewOrNotFound(id);
+        }
+
+        private IActionResult TripViewOrNotFound(string id)
+        {
+            var trip = GetTrip(id);
+            if (trip == null)
+            {
+                Response.StatusCode = 404;
+                return View("trip-not-found");
+            }
+
             return View(GetTrip(id));
         }
     }
