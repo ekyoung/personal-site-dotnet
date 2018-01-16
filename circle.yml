@@ -13,6 +13,7 @@ test:
     - mkdir -p $CIRCLE_TEST_REPORTS/nunit
     - xsltproc -o $CIRCLE_TEST_REPORTS/nunit/Web.Tests.xml trx-to-junit.xslt ./Web.Tests.trx
   post:
+   - mkdir ./src/Web/wwwroot/css
    - dotnet publish -c Release -r centos.7-x64 ./src/Web/
    - mkdir ./code-deploy/content
    - cp -r ./src/Web/bin/Release/netcoreapp2.0/centos.7-x64/publish/* ./code-deploy/content/
